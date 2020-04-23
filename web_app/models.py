@@ -24,6 +24,8 @@ class Tweet(db.Model):
     full_text = db.Column(db.String(500))
     embedding = db.Column(db.PickleType)
 
+    #this line allows bi-directional relationship between Tweet and User.
+    #so you can get tweet info using user.tweets --no need to join tables.
     user = db.relationship("User", backref=db.backref("tweets", lazy=True))
 
 def parse_records(database_records):
