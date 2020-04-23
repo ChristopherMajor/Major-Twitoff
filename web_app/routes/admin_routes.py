@@ -11,6 +11,7 @@ admin_routes = Blueprint("admin_routes", __name__)
 
 API_KEY = "abc123" 
 # TODO: set as env var
+#also check https://flask-basicauth.readthedocs.io/en/latest/
 
 # GET /admin/db/reset?api_key=abc123
 @admin_routes.route("/admin/db/reset")
